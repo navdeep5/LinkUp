@@ -1,5 +1,5 @@
 // Import packages
-import User from "../models/User";
+import User from "../models/User.js";
 
 // Read
 export const getUser = async (req, res) => {
