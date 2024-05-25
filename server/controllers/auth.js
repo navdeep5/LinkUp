@@ -39,7 +39,7 @@ export const register = async (req, res) => {
             const savedUser = await newUser.save();
             res.status(201).json(savedUser);
         } catch (err) {
-            res.status(500).json({error: err.messgage});
+            res.status(500).json({error: err.message});
         } 
 };
 
@@ -52,7 +52,7 @@ export const login = async (req, res) => {
             return res.status(404).json({msg: "User not found"});
         }
 
-        const isMath = await bcrypt.compare(password, user.password);  // Compare the password the user entered with the hashed password in the database
+        const isMatch = await bcrypt.compare(password, user.password);  // Compare the password the user entered with the hashed password in the database
         if (!isMatch) {
             return res.status(400).json({msg: "Invalid credentials"});
         }
