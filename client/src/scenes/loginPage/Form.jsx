@@ -73,7 +73,6 @@ const registerSchema = yup.object().shape({  // Define the schema for the regist
     };
   
     const login = async (values, onSubmitProps) => {
-      try{ 
         const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -90,10 +89,7 @@ const registerSchema = yup.object().shape({  // Define the schema for the regist
           );
           navigate("/home");
         }
-      }
-        catch(err){
-            console.error('An error occurred during login:', err);
-        }
+        
     };
   
     const handleFormSubmit = async (values, onSubmitProps) => {  // Define the function to handle form submission
