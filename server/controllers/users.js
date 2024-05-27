@@ -12,40 +12,26 @@ export const getUser = async (req, res) => {
     }
 }
 
+// Read
 export const getUserFriends = async (req, res) => {
     try {
-        const {id} = req.params;
-        const user = await User.findById(id);
-
-        // Make multiple API calls to the databse
-        const friends = await Promise.all(
-            user.friends.map((id) => User.findById(id))
-        );
-
-        const formattedFriends = friends.map(
-            ({_id, firstName, lastName, occupation, location, picturePath}) => ({
-                _id,
-                firstName,
-                lastName,
-                occupation,
-                location,
-                picturePath,
-            }) => {
-                return {
-                    _id,
-                    firstName,
-                    lastName,
-                    occupation,
-                    location,
-                    picturePath,
-                };
-            }
-        );
-        res.status(200).json(formattedFriends);
+      const { id } = req.params;
+      const user = await User.findById(id);
+  
+      // Make multiple API calls to the databse
+      const friends = await Promise.all(
+        user.friends.map((id) => User.findById(id))
+      );
+      const formattedFriends = friends.map(
+        ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+          return { _id, firstName, lastName, occupation, location, picturePath };
+        }
+      );
+      res.status(200).json(formattedFriends);
     } catch (err) {
-        res.status(404).json({message: err.message});
+      res.status(404).json({ message: err.message });
     }
-};
+  };
 
 // Updaate
 export const addRemoveFriend = async (req, res) => {
@@ -67,24 +53,10 @@ export const addRemoveFriend = async (req, res) => {
         await friend.save(); // Save friend
 
         const formattedFriends = friends.map(
-            ({_id, firstName, lastName, occupation, location, picturePath}) => ({
-                _id,
-                firstName,
-                lastName,
-                occupation,
-                location,
-                picturePath,
-            }) => {
-                return {
-                    _id,
-                    firstName,
-                    lastName,
-                    occupation,
-                    location,
-                    picturePath,
-                };
+            ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+              return { _id, firstName, lastName, occupation, location, picturePath };
             }
-        );
+          );
 
         res.status(200).json(formattedFriends); // Send back updated friends to the FrontEnd
     } catch (err) {
