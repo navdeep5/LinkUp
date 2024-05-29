@@ -1,5 +1,7 @@
 # LinkUp Social Media App
 
+![LinkUp App Screenshot](public/assets/screenshot.png) 
+
 LinkUp is a full-stack social media app built with React and Node.js. It provides users with a platform to connect, share posts, interact with friends, and toggle between light and dark modes for a personalized experience. With user authentication, encryption, and secure API calls, LinkUp ensures a safe and seamless social networking experience.
 
 ## Table of Contents
