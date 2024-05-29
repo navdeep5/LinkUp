@@ -23,19 +23,6 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {  // Destruct
     const isFriend = friends.find((friend) => friend._id === friendId);  // Check if friend is in the friends array
 
     const patchFriend = async () => {  // Add or remove friend API call
-    //     const response = await fetch(
-    //     `http://localhost:3001/users/${_id}/${friendId}`,
-    //     {
-    //         method: "PATCH",
-    //         headers: {
-    //         Authorization: `Bearer ${token}`,
-    //         "Content-Type": "application/json",
-    //         },
-    //     }
-    //     );
-    //     const data = await response.json();
-    //     dispatch(setFriends({ friends: data }));
-    // };
     try {
         const response = await fetch(
           `http://localhost:3001/users/${_id}/${friendId}`,

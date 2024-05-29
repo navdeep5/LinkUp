@@ -30,6 +30,7 @@ const UserWidget = ({ userId, picturePath }) => {
         });
         const data = await response.json();
         setUser(data);
+        console.log("user data:", data);
     };
     
     useEffect(() => {
@@ -122,7 +123,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
                 <FlexBetween gap="1rem" mb="0.5rem">
                     <FlexBetween gap="1rem">
-                        <img src="../assets/twitter.png" alt="twitter" />
+                        <img src="../assets/twitter.png" alt="twitter" /> 
                         <Box>
                             <Typography color={main} fontWeight="500">
                                 Twitter
