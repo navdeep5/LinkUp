@@ -6,7 +6,7 @@ LinkUp is a full-stack social media app built with React and Node.js. It provide
 
 - [Features](#features)
 - [Installation](#installation)
-- [Technologies Used](#echnologies-used)
+- [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact Information](#contact-information)
