@@ -43,7 +43,7 @@ To run LinkUp locally:
    npm run start
    ```
 
-4. Access LinkUp in your browser at \`http://localhost:3000\`.
+4. Access LinkUp in your browser at `http://localhost:3000\.
 
 ## Technologies Used
 
