@@ -27,21 +27,21 @@ LinkUp is a full-stack social media app built with React and Node.js. It provide
 To run LinkUp locally:
 
 1. Clone the repository:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/navdeep5/LinkUp.git
-   \`\`\`
+   ```
 
 2. Navigate to the server directory and start the server:
-   \`\`\`bash
+   ```bash
    cd server
    nodemon index.js
-   \`\`\`
+   ```
 
 3. Navigate to the client directory and start the React app:
-   \`\`\`bash
+   ```bash
    cd client
    npm run start
-   \`\`\`
+   ```
 
 4. Access LinkUp in your browser at \`http://localhost:3000\`.
 
